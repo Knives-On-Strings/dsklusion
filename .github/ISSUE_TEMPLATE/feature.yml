@@ -1,0 +1,17 @@
+name: Feature Request
+description: Suggest a new feature or improvement
+labels: ["feature-request"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What would you like?
+      description: Describe the feature or improvement
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is this useful?
+      description: What problem does it solve or what workflow does it improve?
+
