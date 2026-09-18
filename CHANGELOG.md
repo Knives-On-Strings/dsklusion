@@ -98,7 +98,7 @@ Published to the two public repos and to knivesonstrings.com by
 
 ---
 
-## v0.5.85 — 2026-09-13 — The standalone apps keep your settings, and choose where the Mirage boot ROM lives
+## v0.5.85 — 2026-09-13 — The standalone apps keep your settings
 
 
 - **Settings chosen in the standalone apps are kept.** A folder chosen in the
@@ -178,7 +178,7 @@ Published to the two public repos and to knivesonstrings.com by
 
 ---
 
-## v0.5.70 — 2026-09-11 — The white line under Mample's keyboard
+## v0.5.70 — 2026-09-11 — Stray pale lines where the page meets the window
 
 
 - **The surface behind the page now matches the page.** The editor's own fill
