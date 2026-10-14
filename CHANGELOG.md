@@ -2,24 +2,12 @@
 
 - **Improved:** Release notes are shorter and tagged New, Improved or Fixed, so they are quicker to scan.
 
-## v0.6.47 — 2026-10-14 — Release notes backfilled
-
-- Internal improvements.
-
-## v0.6.46 — 2026-10-13 — Internal improvements
-
-- Internal improvements.
-
 ## v0.6.45 — 2026-10-13 — Validation passes; sample loading fixed
 
 - **Improved:** Passes clap-validator and pluginval (strictest level) in both products.
 - **Fixed:** Pitch Bend's displayed value drifted when a host stored it as text.
 
 - **Fixed:** The sample-load dialog's Load button stayed disabled on a fresh instance; sampling parameters P73–P77 now start at the Mirage's own boot values.
-
-## v0.6.44 — 2026-10-13 — Internal improvements
-
-- Internal improvements.
 
 ## v0.6.43 — 2026-10-13 — Damaged disk images flagged
 
@@ -61,10 +49,6 @@
 - **New:** Settings → MIDI shows the Mirage OS's own omni and channel (P81/P82), read-only, and warns in LLE when the OS would ignore notes.
 - **Fixed:** Under MASOS, the on-screen keyboard plays on MASOS's own MIDI channel.
 
-## v0.6.38 — 2026-10-11 — Internal improvements
-
-- Internal improvements.
-
 ## v0.6.37 — 2026-10-11 — Mix mode and Keyboard Balance
 
 - **Fixed:** In HLEv2 with mix mode on (P28), each key plays the Mirage's wavesample pair, fixing piano and MELPRO sounds.
@@ -103,10 +87,6 @@
 - **Fixed:** Toggling write-protect on two disks in a row no longer loses the first toggle.
 - **Fixed:** A write-protect toggle the drive refuses shows an error.
 
-## v0.6.32 — 2026-10-10 — Internal improvements
-
-- Internal improvements.
-
 ## v0.6.31 — 2026-10-10 — VOLUME knob on older macOS
 
 - **Fixed:** The controls load on older macOS versions.
@@ -140,10 +120,6 @@
 - **Fixed:** In LLE, a parameter edit no longer clicks or cuts a loop.
 - **Fixed:** Dropouts in some hosts, in either engine.
 
-## v0.6.26 — 2026-10-09 — Internal improvements
-
-- Internal improvements.
-
 ## v0.6.25 — 2026-10-09 — Tighter MIDI; clean releases
 
 - **Fixed:** In HLEv2, re-striking a held or sustained key, or a doubled controller, could leave a note sounding.
@@ -159,10 +135,6 @@
 ## v0.6.22 — 2026-10-08 — Fine tune uses its full range
 
 - **Fixed:** P68 Fine Tune uses the Mirage's full 0–255 range, shown in hex. Factory sounds keep their pitch.
-
-## v0.6.21 — 2026-10-08 — Internal tooling
-
-- Internal improvements.
 
 ## v0.6.19 — 2026-10-08 — Mac disk-image installer
 
