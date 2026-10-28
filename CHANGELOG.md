@@ -1,3 +1,150 @@
+## v0.7.4 — 2026-10-27 — HLEv2 panel display fixes
+
+- **Fixed:** In HLEv2, LOAD LOWER and LOAD UPPER now show LL or LU, then the sound number; pressing both, in either order, shows LA and loads both halves.
+- **Fixed:** In HLEv2, the display rests on 21 once a sound is loaded and flashes nd with no disk, instead of staying blank.
+- **Fixed:** In HLEv2, the "Booting Firmware" overlay no longer appears.
+
+## v0.7.3 — 2026-10-26 — Mample's KoS look, Hi-viz theme, redrawn browsers
+
+- **New:** Both disk browsers get a quieter look: Graphite keys instead of amber, a LIBRARY (n) count, and a Current: line.
+- **New:** A ☰ menu in the browsers holds Hide duplicates and label export and import. Hide duplicates is turned on for everyone in this version, even if you had turned it off; switch it off again if you like.
+- **New:** Recent shows the last 10 disks you loaded, kept across restarts.
+- **New:** The header has a stereo VU meter.
+- **New:** The waveform screens light each wavesample while it plays. Under MASOS or Sound Process in the LLE, no wavesamples light.
+- **Improved:** Rescan is now an icon, and tags are one flat list you can filter by.
+- **Improved:** Settings → Appearance is laid out as a grid in both products.
+- **Improved:** The tours are updated and show once more.
+- **Improved:** The User Library now lives inside the Mirage_Disks folder, and both products share its protect and rename records.
+- **Improved:** Disk catalogue 2.8: corrected disk names now reach existing installs.
+- **Improved:** Release packages are named with their platform and architecture, such as win-x64 or mac-universal.
+
+- **New:** A Hi-viz theme for low vision: Settings → Appearance → Theme.
+- **New:** The browser shows a redrawn floppy, with EJECT, the disk window and SAVE DISK underneath. The disk star stars every half.
+- **New:** The disk in the drive is marked Inserted, in the list and on the floppy.
+- **New:** Show: All, Unnamed or Write-protected, and Sort by Name, Date added, Last inserted or Directory.
+- **Improved:** Keypad panels are 510 px wide in every skin, and the mk1 keys are narrower.
+- **Improved:** The User Library moved to Mirage_Disks\User Library, shared with Mample. If you saved disks in v0.7.2, DSKlusion shows where they are and where to move them.
+- **Improved:** Render quality is remembered.
+- **Fixed:** In the sample dialog, Tab skips the Raw PCM fields unless a raw file is chosen.
+- **Fixed:** DSKlusion restores the last disk: an LLE project reopens with its OS booted and the sound disk back in the drive, and the browser remembers a disk mounted from it.
+
+## v0.7.2 — 2026-10-23 — DSKlusion's new look, tours and a faster browser
+
+- **New:** The disk browser opens at once with the last list it showed, then refreshes in place.
+- **New:** A Rescan button in the disk browser re-reads your library on demand.
+- **Improved:** Both products keep sound disks in one shared folder, Documents\KnivesOnStrings\Mirage_Disks, by default.
+
+- **New:** Panel skins in Settings → Appearance → Panel: KoS, mk1, mk2, mk3 and mk4.
+- **New:** A light theme: Settings → Appearance → Theme. The front panel keeps its hardware colours.
+- **New:** Green LCD and Green LED displays. Settings → Appearance → Display matches the panel skin by default (amber on KoS and mk1, Green LED on mk2, green LCD on mk3 and mk4), or can be set to Classic Amber, OLED Blue, Green LCD or Green LED for every skin.
+- **New:** An engine band across the top of the panel shows the engine, and in LLE the firmware and OS, at a glance.
+- **New:** A MIDI light and a Params key in the header.
+- **New:** A short first-run tour, which Show Tour in Settings → Appearance runs again.
+- **New:** Optional usage data, an update check and Report an Issue, as in Mample. You choose in Settings → Privacy, and DSKlusion asks before sending any usage data.
+- **Improved:** A new look for DSKlusion's default KoS panel: soft raised keys on one panel, mixed-case labels, LOAD stacked above SAMPLE in two tones, and a recessed display with faint unlit segments. The header and the waveform screens share the look.
+
+## v0.7.1 — 2026-10-23 — Mono mode, voice reuse, LLE filter tuning
+
+- **New:** Mono mode (P29) plays as on the Mirage: one voice per keyboard half, the lowest held key wins, and a lower key changes pitch without restarting the note (legato).
+- **Improved:** A key struck again while its note still rings restarts on that same voice, as the Mirage does.
+- **Improved:** Mac and Windows now render identically.
+- **Fixed:** Resonance (P37) now matches DSKlusion's LLE engine, so resonant sounds are stronger than before.
+
+- **Improved:** Editing P29 on the panel restarts voice order, as the Mirage does.
+- **Fixed:** In LLE, the boot filter auto-tune now tunes each filter, so LLE sounds have the same brightness as the default engine. LLE takes about 2 s longer to boot.
+
+## v0.7.0 — 2026-10-22 — The Mirage's real clock, and HLEv2 matched to it
+
+- **New:** A Note Timing setting: Tight (the default, unchanged) or Authentic, which adds the Mirage's own note-on and note-off delays.
+- **Improved:** Voices are allocated as on the Mirage: a released, still-ringing voice is reused before a held note is cut, and a held one-shot frees its voice when its sample ends.
+- **Improved:** Two-layer sounds start their second layer with the Mirage's own small delay, so velocity responds as on the hardware.
+- **Improved:** Envelope and LFO rates follow the Mirage's measured clock, about 1–2% slower than before.
+- **Fixed:** Envelope decays and releases follow the Mirage's ROM. Long tails were up to about a third too long.
+
+- **Improved:** In LLE, the 6809 runs at 1 MHz as on a real Mirage, while the VIA and MIDI stay at 2 MHz. Boot, disk and other CPU-timed delays now take their real time; pitch is unchanged.
+- **Improved:** Opening a disk and refreshing the waveform wait up to 20 s, to cover real-speed disk loading.
+- **Fixed:** In LLE, MIDI could stop responding for good after one receive overrun.
+- **Fixed:** Two DSKlusion LLE instances no longer share floppy rotation or sample-bank state.
+
+## v0.6.73 — 2026-10-20 — Stereo, a tidier browser, and ASIO
+
+- **New:** The disk browser can hide duplicate disks: identical copies show once, with a count.
+- **New:** Tags in one set of chips, in both views: pick a family (Keys, Strings, Brass & wind, Synth, Percussion, Voice) to see the tags inside it.
+- **New:** Disks and sounds with no tags get automatic tags from their names. They look dimmer, and you can remove any of them.
+- **New:** The browser remembers its view, filters and last disk.
+- **New:** The Windows Standalone apps support ASIO audio drivers.
+- **Improved:** The library is no longer rescanned after a DAW restart; only new or changed disks are read.
+- **Improved:** On Windows, "Install for me only" installs for the signed-in user and no longer asks for administrator rights.
+- **Fixed:** A disk of your own named like a factory disk no longer shows that factory disk's names and sounds.
+- **Fixed:** Your labels stay with a disk when you save over it.
+- **Fixed:** Eight factory sound names now close their quotes, as in Low Voices "AH".
+
+- **Fixed:** In LLE, system settings and instrument globals edited in the parameter drawer now stay put.
+
+ASIO is a trademark of Steinberg Media Technologies GmbH, registered in Europe and other countries.
+
+## v0.6.71 — 2026-10-20 — DSKlusion Windows installer
+
+- **New:** A Windows installer for the VST3, CLAP and Standalone, with the licence to accept and the WebView2 Runtime if it is missing. No Ensoniq software is included.
+
+## v0.6.70 — 2026-10-20 — Parameter ranges match the Mirage
+
+- **Fixed:** Pitch Bend Range (P22) stops at 12, as on the Mirage. A session saved with a higher value reopens at 12.
+- **Fixed:** A 2-sided HFE disk image loads from the right tracks instead of showing as damaged.
+
+- **New:** P91 and P92 can be set from the host, and in HLEv2 from the front panel; Save Configuration (P14) keeps them.
+- **Fixed:** MIDI Function Enable (P84) has the Mirage's four settings, 0–3, and starts at 2.
+- **Fixed:** Internal Clock Rate (P87) runs 0–99 and starts at 48, as on the Mirage. High values no longer wrap.
+- **Fixed:** In HLEv2, a setting changed from the parameter drawer, such as the MIDI channel (P82), stays changed on the front panel.
+- **Fixed:** In LLE, the parameter drawer shows the Mirage's own Local On/Off (P30), and changing it reaches the instrument.
+- **Fixed:** In LLE with MASOS or Sound Process booted, editing or automating a parameter no longer writes into an unrelated setting, such as MASOS's MIDI Omni.
+
+## v0.6.69 — 2026-10-19 — Save your setup in HLEv2
+
+- **New:** In HLEv2, Save Configuration Parameters (PARAM 14) saves your setup to the disk in the drive, as on the Mirage.
+
+## v0.6.68 — 2026-10-19 — The Mirage's own digits; the panel reads back setup values
+
+- **Fixed:** In HLEv2, the front panel shows the real value of Local, the MIDI settings and the sampling setup (P73–P77), and UP/DOWN steps from it instead of from 0.
+
+## v0.6.63 — 2026-10-18 — Wrong-sized disk images are refused
+
+- **Fixed:** A disk image file that is too short or too long to be a whole Mirage disk no longer loads, and the status line says so, giving its size.
+
+## v0.6.58 — 2026-10-17 — Browse by sound, audition before loading, and update checks
+
+- **Improved:** Every network request Mample makes now carries the same fixed headers, naming only KosNet and its version, never your DAW, operating system or language.
+
+- **Improved:** In HLEv2, saving to a write-protected disk now waits as long as the Mirage does before flashing Pd.
+
+## v0.6.57 — 2026-10-17 — A volume readout, and held loops that follow their loop point
+
+- **New:** Hovering, dragging or focusing the VOLUME knob shows its level, for example "75 % −7.5 dB". Double-click returns it to the default, and the arrow keys adjust it once it has focus.
+- **Improved:** The disk catalog names London 1's six drum kits and titles London 1 and 3.
+- **Fixed:** A wavesample whose loop switch is stored as any value other than 0 or 1 now loops, as on the Mirage, instead of playing once (Factory Disk OS 3.2, Upper sound 2, wavesample 6).
+
+- **Fixed:** In HLEv2, a held note now follows a loop end you move further out while it plays, as on the Mirage.
+
+## v0.6.56 — 2026-10-17 — Saving sounds in HLEv2; Mample's default volume is 75%
+
+- **Improved:** The master volume's soft clipping is smooth at both limits, and its added colour is the NE570's own 0.4%, so loud sounds distort far less.
+- **Improved:** The disk catalog adds 28 disks (K-Muse L.A., Sound Cells, Minotaur and the self-oscillating filter OS) and names 122 sounds, including K-Muse London 4.
+
+- **New:** In HLEv2, save a sound from the panel as on the Mirage: PARAM 11, 12 or 13, a slot digit, then ENTER. The display flashes and blanks with the Mirage's timing, shows Pd on a write-protected disk and nd with no disk.
+- **New:** SAVE DISK and its modified dot work in HLEv2, and a panel save writes the disk file after a backup, as in LLE.
+- **Fixed:** In HLEv2, editing a wavesample's start, end, loop or loop switch (P60 to P65) now does what the Mirage does, including the other values it changes, so the sound plays and saves as on the hardware.
+- **Fixed:** In HLEv2, a held note keeps sounding while you edit its loop points.
+- **Fixed:** After a loop-point edit, the editor and your DAW show every value the edit changed, and undo restores them together.
+
+## v0.6.53 — 2026-10-15 — LED-font readouts
+
+- **Improved:** The About box credits the DSEG7 Classic typeface.
+
+## v0.6.50 — 2026-10-14 — Favourites, tags and LED readouts
+
+- **New:** Star a sound half in the disk browser and show only your ★ Favourites; stars are yours alone, shared between Mample and DSKlusion, and never exported.
+- **New:** The catalog now tags 429 sounds by type (keys, strings, brass & wind, synth, percussion, voice), so you can filter the factory and third-party libraries by tag.
+
 ## v0.6.48 — 2026-10-14 — Shorter release notes
 
 - **Improved:** Release notes are shorter and tagged New, Improved or Fixed, so they are quicker to scan.
