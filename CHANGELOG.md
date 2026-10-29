@@ -1,4 +1,11 @@
+## v0.7.5 — 2026-10-28 — DISK light and default volume
+
+- **New:** In the LLE, a DISK light shows when the Mirage's drive is busy; Eject, Insert, SAVE DISK and Restore wait until it goes out.
+- **Improved:** DSKlusion starts at 75% volume, matching Mample, so LLE playback no longer runs hot.
+
 ## v0.7.4 — 2026-10-27 — HLEv2 panel display fixes
+
+- **Fixed:** The licence page in both installers shows the text in paragraphs, instead of breaking every line at 80 columns.
 
 - **Fixed:** In HLEv2, LOAD LOWER and LOAD UPPER now show LL or LU, then the sound number; pressing both, in either order, shows LA and loads both halves.
 - **Fixed:** In HLEv2, the display rests on 21 once a sound is loaded and flashes nd with no disk, instead of staying blank.
