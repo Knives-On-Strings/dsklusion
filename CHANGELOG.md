@@ -1,3 +1,58 @@
+## v0.7.8 — 2026-11-06 — The side block, macros, sampling and the LLE audio fix
+
+- **New:** Settings → Advanced → Save debug dump, in both products, records what the engine was doing: press it while a problem is happening and send us the file privately, since it can hold the sounds of the disk you were playing (DSKlusion's dump holds sample RAM; a Mample dump holds only the last 0.2 s of its output).
+- **Improved:** Settings has six tabs: Sound, Disks, MIDI / Audio, Appearance, Privacy and Advanced.
+- **Improved:** The update notice is a red dot on the About button, and About names the update.
+- **Improved:** The eject key has left the header; the disk name opens the disk browser, as it already did.
+- **Fixed:** A project saved with an out-of-range window scale now reopens at the nearest allowed size.
+- **Fixed:** On macOS, the disk library's lock file is hidden instead of showing in the Mirage_Disks folder.
+- **Fixed:** A whole-number parameter set from your host no longer lands one step low.
+- **Fixed:** A host preparing audio again at the same or a smaller block size no longer risks a glitch.
+
+- **New:** SAMPLE UPPER and SAMPLE LOWER open a choice between File import and Live input.
+- **New:** Live input records from an audio input through the Mirage's own sampling. A capture panel follows the Mirage's display (meter, ENTER, trigger wait, recording), in the LLE under OS 3.2 and MASOS and in HLEv2.
+- **New:** A Sample In input, off by default: turn it on in your host to feed live audio to the Mirage.
+- **New:** In the standalone, Settings → Sound → Sampling → Live input chooses the input device and channel; the capture panel can also ask each time, and the input is heard only while sampling.
+- **New:** Settings → Sound → Sampling → Default sampling mode (Ask every time, File import or Live input) sets what SAMPLE UPPER and SAMPLE LOWER do first.
+- **New:** "New disk…" in the disk browser's menu makes a blank disk in your User Library and puts it in the drive.
+- **New:** In HLEv2, a recording resets the half as the Mirage does and is saved with SOUND SAVE.
+- **New:** A tabbed block beside the button panel. Envelopes draws both halves' filter and amp shapes with a dot for each sounding note, Params lists the parameters live, Disk shows the mounted disk's sounds with the loaded halves highlighted, and Macros holds the macro knobs.
+- **New:** Eight macro knobs. Right-click one to assign a synthesis parameter; it drives both halves from the next note, takes the mouse wheel, is saved with your project, and can be automated as Macro 1–8.
+- **New:** Host automation lists the synthesis and performance controls.
+- **New:** Tiny View, a 530 × 326 window with just the header and the button panel, from a key in the header or Settings → Appearance. It grows while a dialog is open and is saved with your project.
+- **New:** A stereo WIDTH knob: 0 is mono, 1 the DSK-1 split. DSKlusion's default output is now stereo.
+- **New:** Settings → Sound → Sampling can fit the ISF-1 cartridge, and MASOS records through it.
+- **New:** Settings warns when the boot ROM file isn't one we recognise, since a different revision or a damaged copy can make the LLE misbehave.
+- **New:** The drive shows which disk image is in it: hover the disk name for its full path, and the Disk tab ends with its name and path.
+- **Improved:** A file import sets up the half as a fresh recording does, and the dialog says what it replaces: the whole half, or the current wavesample with P77 on.
+- **Improved:** An imported file is filtered as the Mirage's own input filter would at the P74 you set; P73 below 30 is refused as not available on the stock Mirage, and the LLE needs its OS booted for an import.
+- **Improved:** A change of the host's sample rate during a recording no longer detunes it.
+- **Improved:** In HLEv2, the SAVE display's timings match the average of the LLE's.
+- **Improved:** The waveform screens redraw only when a half has changed, which lowers the editor's CPU use.
+- **Improved:** The Params tab replaces the parameter drawer, so the window no longer grows for it.
+- **Improved:** The disk name comes from the catalogue, and each waveform caption names the disk its half's sound came from.
+- **Improved:** In HLEv2 the engine band and Settings name the OS as HLEv2.
+- **Fixed:** The standalone's in-app audio settings now show and work, so you can pick the output device, rate and buffer size.
+- **Fixed:** In the LLE under OS 3.2, the on-screen keyboard no longer leaves up to eight keys lit after their notes have ended.
+- **Fixed:** In the LLE, pressing SAMPLE with no input no longer erases the half's wavesample setup.
+- **Fixed:** In the LLE, OS 3.2 recordings now run at the P73 sample period you set instead of one microsecond short.
+- **Fixed:** AIFF and AIFF-C files import, and so do 24-bit, 32-bit and float WAV files.
+- **Fixed:** A file import is treated as line level; P75 no longer multiplies it by the microphone gain.
+- **Fixed:** The import dialog reads a file's rate and length whatever its chunk order, offers raw PCM only for raw files, and says why a file was refused.
+- **Fixed:** In HLEv2, an import or recording into a half saved in the older layout now saves the imported settings.
+- **Fixed:** In HLEv2, RESET is refused with a message while the drive is busy or a recording is armed, instead of emptying the machine.
+- **Fixed:** In HLEv2, a held sustain pedal is not left stuck when a recording starts or ends.
+- **Fixed:** In HLEv2, LOAD on an empty slot shows nF and loads nothing, and a disk boots only the halves its sound directory lists.
+- **Fixed:** Held keys show lit again after the editor is reopened, and the waveform screens no longer stay blank if the editor was hidden when they updated.
+- **Fixed:** A cold boot, disk load or boot-ROM change while audio is playing waits for the audio block instead of risking a crash.
+- **Fixed:** A RESET with an unusable boot ROM keeps the disk that was waiting to be restored.
+- **Fixed:** In the LLE, notes no longer sound distorted after you've played in HLEv2 and switched.
+- **Fixed:** In HLEv2, an all-notes-off message (CC123) releases held voices, as OS 3.2 does.
+- **Fixed:** In HLEv2, the release parameters P44, P49, P54 and P59 are read at note-off, as OS 3.2 does.
+- **Fixed:** In HLEv2, a panel edit updates the host parameter, and host automation of a synthesis parameter takes effect on the next note.
+- **Fixed:** In the LLE, the on-screen keyboard lights held and pedal-held keys correctly, and the envelope dots release on all-notes-off.
+- **Fixed:** Settings shows the log level in force, not always Off.
+
 ## v0.7.5 — 2026-10-28 — DISK light and default volume
 
 - **New:** In the LLE, a DISK light shows when the Mirage's drive is busy; Eject, Insert, SAVE DISK and Restore wait until it goes out.
